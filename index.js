@@ -20,10 +20,12 @@ app.use(express.json())
 //rotas da API
 
 const personRoutes = require('./routes/personRoutes')
+const jobRoutes = require('./routes/jobRoutes')
 
 //tudo que for solicitado na chamada da rota /person sera direcionado para o arquivo personRoutes.js
 // Esse direcionamento acontece pela funcao abaixo
 app.use('/person', personRoutes)
+app.use('/job', jobRoutes)
  
 //criar um endpoint inicial
 app.get('/', (req, res) => {
@@ -35,7 +37,7 @@ const DB_USER = process.env.DB_USER
 const DB_PASSWORD = encodeURIComponent(process.env.DB_PASSWORD)
 
 // funcao para conectar a aplicacao com o BD
-mongoose.connect(`mongodb+srv://${ DB_USER }:${ DB_PASSWORD }@apicluster.3jcro.mongodb.net/primeiraApi?retryWrites=true&w=majority`)
+mongoose.connect(`mongodb+srv://${ DB_USER }:${ DB_PASSWORD }@fullstackproject.iv7jp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`)
 	.then(() => {
 		//entregar uma porta para poder acessar essa rota
 		app.listen(3000)
@@ -46,8 +48,3 @@ mongoose.connect(`mongodb+srv://${ DB_USER }:${ DB_PASSWORD }@apicluster.3jcro.m
 		console.log(err)
 
 	})
-
-
-
-// mongodb+srv://admin:<password>@apicluster.3jcro.mongodb.net/primeiraApi?retryWrites=true&w=majority
-// npmrunbuild

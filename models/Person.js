@@ -3,8 +3,10 @@ const mongoose = require('mongoose')
 
 const Person = mongoose.model('Person', {
 	name: String,
-	salary: Number,
-	approved: Boolean
+	lastName: String,
+	age: Number,
+	cpf: String,
+	child: Object
 })
 
 module.exports = Person
