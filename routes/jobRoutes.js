@@ -120,7 +120,7 @@ router.patch('/:id', async (req, res) => {
 	}
 })
 
-// DELETE - Deleta algum registro
+// DELETE - Deleta algum registro cadastrado
 router.delete('/:id', async (req, res) => {
 	const id = req.params.id
 
@@ -141,5 +141,5 @@ router.delete('/:id', async (req, res) => {
 	}
 })
 
-
 module.exports = router
+ 
